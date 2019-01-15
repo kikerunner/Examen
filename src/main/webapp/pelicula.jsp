@@ -29,7 +29,7 @@ List<Pelicula> listAllPeliculas = (List<Pelicula>)request.getAttribute("listAllP
 			<td>Cod</td>
 			<td>Title</td>
 			<td>codDirector</td>
-			<td>Editar</td>
+			<td>Edit</td>
 		</tr>
 	</thead>
 	<tbody>

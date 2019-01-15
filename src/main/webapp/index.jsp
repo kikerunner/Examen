@@ -4,29 +4,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Pagina de inicio</title>
+<title>Index Page</title>
 </head>
 <body>
 	
 	<div>
-		<a href="addActor.jsp">Actores</a>
+		<a href="addActor.jsp">Actors</a>
 	</div>
 	
 	<div>
-		<a href="addPelicula.jsp">Peliculas</a>
+		<a href="addPelicula.jsp">Films</a>
 	</div>
 	
 	<div>
-		<a href="addDirector.jsp">Directores</a>
+		<a href="addDirector.jsp">Directors</a>
 	</div>
 	<div>
-		<a href="peliculaactor">Asociar peliculas con actores:</a>
+		<a href="peliculaactor">Asociating films with Actors:</a>
 	</div>
 	<div>
-		<a href="characterSearcher">Buscador de personaje</a><br/>
+		<a href="characterSearcher">Looking for Characters</a><br/>
 	</div>
 	<div>
-		<a href="/buscadorActor">Buscador de Director por Actor</a><br/>
+		<a href="/buscadorActor">Searcher of Director by Actor</a><br/>
 	</div>
 
 	

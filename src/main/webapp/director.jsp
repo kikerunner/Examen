@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Index page</title>
+<title>Inserting Director</title>
 </head>
 <body>
 	<form action="/pelicula" method="post">

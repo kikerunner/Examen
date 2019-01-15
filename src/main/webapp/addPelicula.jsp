@@ -10,11 +10,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insertar nueva Pelicula</title>
+<title>Inserting New Film</title>
 </head>
 <body>
 <form action="cargarListadoPeliculas" method="post">
-		<input type="submit" value="ver listado">
+		<input type="submit" value="Show List">
 </form>
 
 	<%
@@ -25,16 +25,16 @@
 	%>
 
 	<form action="AddPelicula" method="post">
-		<span>Titulo:</span><input type="text" name="TITTLE">
-		<span>Codigo director</span><input type="number" name="CODOWNER">
-		<input type="submit">
+		<span>Title:</span><input type="text" name="TITTLE">
+		<span>Director's Code:</span><input type="number" name="CODOWNER">
+		<input type="submit" value="Send">
 	</form>
 	<table border="1">
 		<thead>
 			<tr>
-				<td>TITLE</td>
-				<td>CODOWNER</td>
-				<td>Borrar</td>
+				<td>Title</td>
+				<td>CodOwner</td>
+				<td>Erase</td>
 			</tr>
 		</thead>
 		<tbody>

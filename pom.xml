@@ -2,9 +2,9 @@
   <modelVersion>4.0.0</modelVersion>
   
   <groupId>es.salesianos</groupId>
-  <artifactId>ExamenGorka</artifactId>
+  <artifactId>Recuperacion</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>ExamenGorka</name>
+  <name>Recuperacion</name>
   <packaging>war</packaging>
   
 	<dependencies>

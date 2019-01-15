@@ -10,11 +10,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insertar nuevo Actor</title>
+<title>Inserting new Director</title>
 </head>
 <body>
 <form action="cargarListadoDirectores" method="post">
-		<input type="submit" value="ver listado">
+		<input type="submit" value="Show List">
 </form>
 
 	<%
@@ -25,14 +25,14 @@
 	%>
 
 	<form action="AddDirector" method="post">
-		<span>Nombre director</span><input type="text" name="NAME">
-		<input type="submit">
+		<span>Director's Name</span><input type="text" name="NAME">
+		<input type="submit" value="Send">
 	</form>
 	<table border="1">
 		<thead>
 			<tr>
-				<td>NOMBRE DIRECTOR</td>
-				<td>Borrar</td>
+				<td>Director's Name</td>
+				<td>Erase</td>
 			</tr>
 		</thead>
 		<tbody>

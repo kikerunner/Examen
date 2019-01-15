@@ -21,7 +21,7 @@ List<Film> listAllFilms = (List<Film>)request.getAttribute("listAllFilms");
 		<tr>
 			<td>Cod</td>
 			<td>Title</td>
-			<td>Asociar Actor</td>
+			<td>Asocite Actor</td>
 		</tr>
 	</thead>
 	<tbody>
