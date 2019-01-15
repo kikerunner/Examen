@@ -16,7 +16,7 @@ import es.salesianos.service.FilmService;
 /**
  * Servlet implementation class PeliculaActorServlet
  */
-public class PeliculaActorServlet extends HttpServlet {
+public class FilmActorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private FilmService service = new FilmService();

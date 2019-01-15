@@ -9,24 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Director;
+import es.salesianos.model.Actor;
 import es.salesianos.repository.RepositoryActor;
-import es.salesianos.service.DirectorService;
+import es.salesianos.service.ActorService;
 
-public class ListadoServletDirectores extends HttpServlet {
+public class ActorsList extends HttpServlet {
 	
-	private DirectorService servicio = new DirectorService();
+	private ActorService servicio = new  ActorService();
 	private RepositoryActor repositoryActor = new  RepositoryActor();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Director> listAllDirectors = servicio.listAllDirectors();
-		req.setAttribute("listAllDirectors", listAllDirectors);
+		List<Actor> listAllActors = servicio.listAllActors();
+		req.setAttribute("listAllActors", listAllActors);
 		redirect(req,resp);
 	}
 	
+	
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addDirector.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addActor.jsp");
 		dispatcher.forward(req,resp);
 	}
 }

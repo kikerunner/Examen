@@ -9,25 +9,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import es.salesianos.model.Actor;
+import es.salesianos.model.Film;
 import es.salesianos.repository.RepositoryActor;
-import es.salesianos.service.ActorService;
+import es.salesianos.service.FilmService;
 
-public class ListadoServlet extends HttpServlet {
+public class FilmsList extends HttpServlet {
 	
-	private ActorService servicio = new  ActorService();
+	private FilmService servicio = new FilmService();
 	private RepositoryActor repositoryActor = new  RepositoryActor();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Actor> listAllActors = servicio.listAllActors();
-		req.setAttribute("listAllActors", listAllActors);
+		List<Film> listAllFilms = servicio.listAllFilms();
+		req.setAttribute("listAllFilms", listAllFilms);
 		redirect(req,resp);
 	}
-	
-	
+
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addActor.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/addPelicula.jsp");
 		dispatcher.forward(req,resp);
 	}
 }
