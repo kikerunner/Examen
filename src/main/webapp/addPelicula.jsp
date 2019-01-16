@@ -13,7 +13,7 @@
 <title>Inserting New Film</title>
 </head>
 <body>
-<form action="cargarListadoPeliculas" method="post">
+<form action="LoadFilmsList" method="post">
 		<input type="submit" value="Show List">
 </form>
 

@@ -18,9 +18,9 @@
 	%>
 
 	<form action="/characterSearcher" method="post">
-	<span>Buscar por personaje: <input type="text" name="role"></span>
+	<span>Searching by Character: <input type="text" name="role"></span>
 	<br />
-	<input type="submit">
+	<input type="submit" value="Send">
 	</form>
 	<br />
 	<br />
@@ -28,9 +28,9 @@
 	<table border="1">
 		<thead>
 			<tr>
-				<td>Pelicula actuada</td>
-				<td>Nombre de Actor</td>
-				<td>Nombre de Personaje</td>
+				<td>Film Acted</td>
+				<td>Actor's name</td>
+				<td>Character's Name</td>
 			</tr>
 		</thead>
 		<tbody>

@@ -13,7 +13,7 @@
 <title>Inserting new Director</title>
 </head>
 <body>
-<form action="cargarListadoDirectores" method="post">
+<form action="LoadDirectorsList" method="post">
 		<input type="submit" value="Show List">
 </form>
 

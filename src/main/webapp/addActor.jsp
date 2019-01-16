@@ -13,7 +13,7 @@
 <title>Insert New Actor</title>
 </head>
 <body>
-<form action="cargarListadoActores" method="post">
+<form action="LoadActorsList" method="post">
 		<input type="submit" value="Show List">
 </form>
 

@@ -47,7 +47,7 @@ public class FilmActorServlet extends HttpServlet {
 	}
 
 	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/peliculaactores.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/FilmActor.jsp");
 		dispatcher.forward(req, resp);
 	}
 
