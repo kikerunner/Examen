@@ -5,28 +5,28 @@ import java.util.List;
 public class Film {
 	private Integer cod;
 	private String title;
-	private Integer codowner;
+	private Integer codDirector;
 	private Director director;
 	private List<FilmActors> peliculaActor;
 	public Integer getCOD() {
 		return cod;
 	}
-	public void setCOD(Integer cOD) {
-		cod = cOD;
+	public void setCod(Integer cod) {
+		this.cod = cod;
 	}
-	public String getTITTLE() {
+	public String getTittle() {
 		return title;
 	}
 
-	public void setTITTLE(String Title) {
+	public void setTittle(String Title) {
 		title = Title;
 	}
-	public Integer getCODOWNER() {
-		return codowner;
+	public Integer getCodDirector() {
+		return codDirector;
 	}
 
-	public void setCODOWNER(Integer Codowner) {
-		codowner = Codowner;
+	public void setCodDirector(Integer Codowner) {
+		codDirector = Codowner;
 	}
 	
 	public Director getDirector() {
@@ -37,11 +37,11 @@ public class Film {
 		this.director = director;
 	}
 
-	public List<FilmActors> getPeliculaActor() {
+	public List<FilmActors> getFilmActor() {
 		return peliculaActor;
 	}
 
-	public void setPeliculaActor(List<FilmActors> peliculaActor) {
+	public void setFilmActor(List<FilmActors> peliculaActor) {
 		this.peliculaActor = peliculaActor;
 	}
 	

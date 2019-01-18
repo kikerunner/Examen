@@ -22,7 +22,7 @@ public class ActorService {
 	}
 
 	public void searchAndDeleteActor(Integer codActor) {
-		repositoryActor.searchAndDeleteActor(codActor);
+		repositoryActor.DeleteActorById(codActor);
 	}
 
 	public void addActor(Actor actor) {
@@ -30,7 +30,7 @@ public class ActorService {
 	}
 
 	public List<Actor> filterAllActor(int beginDate, int endDate) {
-		return repositoryActor.filterAllActor(beginDate, endDate);
+		return repositoryActor.filterByYearOfDateBetween(beginDate, endDate);
 	}
 
 	public List<Actor> selectAllActor() {
@@ -38,6 +38,6 @@ public class ActorService {
 	}
 
 	public Actor filterAllDirector(String name) {
-		return repositoryActor.filterAllDirector(name);
+		return repositoryActor.filterAllActor(name);
 	}
 }

@@ -47,7 +47,7 @@ public class RepositoryFilmActors {
 			preparedStatement.setInt(1, filmActor.getCache());
 			preparedStatement.setString(2, filmActor.getRole());
 			preparedStatement.setInt(3, filmActor.getCodActor());
-			preparedStatement.setInt(4, filmActor.getCodPelicula());
+			preparedStatement.setInt(4, filmActor.getCodFilm());
 			preparedStatement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -73,8 +73,9 @@ public class RepositoryFilmActors {
 				peliculaActorfromDataBase.setCache(resultSet.getInt(1));
 				peliculaActorfromDataBase.setRole(resultSet.getString(2));
 				peliculaActorfromDataBase.setCodActor(resultSet.getInt(3));
-				peliculaActorfromDataBase.setCodPelicula(resultSet.getInt(4));
+				peliculaActorfromDataBase.setCodFilm(resultSet.getInt(4));
 				filmActor = peliculaActorfromDataBase;
+				preparedStatement.close();
 			}
 			preparedStatement = conn.prepareStatement("SELECT * FROM Actor where cod=" + filmActor.getCodActor());
 			resultSet = preparedStatement.executeQuery();
@@ -83,15 +84,16 @@ public class RepositoryFilmActors {
 				actorfromDataBase.setName(resultSet.getString(2));
 				actorfromDataBase.setYearofbirthday(resultSet.getInt(3));
 				filmActor.setActor(actorfromDataBase);
+				preparedStatement.close();
 			}
 
-			preparedStatement = conn.prepareStatement("SELECT * FROM FILM where cod=" + filmActor.getCodPelicula());
+			preparedStatement = conn.prepareStatement("SELECT * FROM FILM where cod=" + filmActor.getCodFilm());
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Film peliculafromDataBase = new Film();
-				peliculafromDataBase.setCOD(resultSet.getInt(1));
-				peliculafromDataBase.setTITTLE(resultSet.getString(2));
-				peliculafromDataBase.setCODOWNER(resultSet.getInt(3));
+				peliculafromDataBase.setCod(resultSet.getInt(1));
+				peliculafromDataBase.setTittle(resultSet.getString(2));
+				peliculafromDataBase.setCodDirector(resultSet.getInt(3));
 				filmActor.setFilm(peliculafromDataBase);
 			}
 

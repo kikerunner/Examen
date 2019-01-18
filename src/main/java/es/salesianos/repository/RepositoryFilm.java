@@ -43,8 +43,8 @@ public class RepositoryFilm {
 		try {
 			preparedStatement = conn.prepareStatement("INSERT INTO FILM (TITTLE,CODOWNER)" +
 					"VALUES (?, ?)");
-			preparedStatement.setString(1, film.getTITTLE());
-			preparedStatement.setInt(2, film.getCODOWNER());
+			preparedStatement.setString(1, film.getTittle());
+			preparedStatement.setInt(2, film.getCodDirector());
 
 
 			preparedStatement.executeUpdate();
@@ -71,9 +71,9 @@ public class RepositoryFilm {
 			while (resultSet.next()) {
 				Film peliculaInDataBase = new Film();
 				
-				peliculaInDataBase.setCOD(resultSet.getInt(1));
-				peliculaInDataBase.setTITTLE(resultSet.getString(2));
-				peliculaInDataBase.setCODOWNER(resultSet.getInt(3));
+				peliculaInDataBase.setCod(resultSet.getInt(1));
+				peliculaInDataBase.setTittle(resultSet.getString(2));
+				peliculaInDataBase.setCodDirector(resultSet.getInt(3));
 
 				listPeliculas.add(peliculaInDataBase);
 			}

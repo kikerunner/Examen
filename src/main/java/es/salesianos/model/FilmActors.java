@@ -20,11 +20,11 @@ public class FilmActors {
 	public void setRole(String role) {
 		this.role = role;
 	}
-	public int getCodPelicula() {
+	public int getCodFilm() {
 		return codFilm;
 	}
-	public void setCodPelicula(int codPelicula) {
-		this.codFilm = codPelicula;
+	public void setCodFilm(int codFilm) {
+		this.codFilm = codFilm;
 	}
 	public int getCodActor() {
 		return codActor;
@@ -45,8 +45,8 @@ public class FilmActors {
 		return film;
 	}
 
-	public void setFilm(Film pelicula) {
-		this.film = pelicula;
+	public void setFilm(Film film) {
+		this.film = film;
 	}
 
 }

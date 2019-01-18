@@ -1,6 +1,7 @@
 package es.salesianos.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -23,18 +24,17 @@ public class AddActorServlet extends HttpServlet {
 	@Override
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String parameter = req.getParameter("beginDate");
+		List<Actor> listAllActors = new ArrayList<>();
 		if (parameter != null) {
-			int beginDate = Integer.parseInt(req.getParameter("beginDate"));
+			int beginDate = Integer.parseInt(parameter);
 			int endDate = Integer.parseInt(req.getParameter("endDate"));
-			List<Actor> listAllActors = service.filterAllActor(beginDate, endDate);
-			req.setAttribute("listAllActors", listAllActors);
+			listAllActors = service.filterAllActor(beginDate, endDate);
 		} else {
 			Actor actor = assembler.assembleActorFromRequest(req);
-
 			service.addActor(actor);
-			List<Actor> listAllActors = service.selectAllActor();
-			req.setAttribute("listAllActors", listAllActors);
+			listAllActors = service.selectAllActor();
 		}
+		req.setAttribute("listAllActors", listAllActors);
 		
 		redirect(req,resp);
 	}

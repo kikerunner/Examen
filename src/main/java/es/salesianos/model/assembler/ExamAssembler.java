@@ -22,11 +22,8 @@ public class ExamAssembler {
 		Film film = new Film();
 		String titulo=req.getParameter("TITTLE");
 		Integer codowner=Integer.parseInt(req.getParameter("CODOWNER"));
-
-		film.setTITTLE(titulo);
-		film.setCODOWNER(codowner);
-		
-		
+		film.setTittle(titulo);
+		film.setCodDirector(codowner);
 		return film;
 	}
 	
@@ -35,8 +32,6 @@ public class ExamAssembler {
 		Director director = new Director();
 		String NAME=req.getParameter("NAME");
 		director.setName(NAME);
-		
-		
 		return director;
 	}
 
@@ -46,7 +41,7 @@ public class ExamAssembler {
 		String codActor = req.getParameter("codActor");
 		String cache = req.getParameter("cache");
 		String role = req.getParameter("role");
-		FilmActor.setCodPelicula(Integer.parseInt(codPelicula));
+		FilmActor.setCodFilm(Integer.parseInt(codPelicula));
 		FilmActor.setCodActor(Integer.parseInt(codActor));
 		FilmActor.setCache(Integer.parseInt(cache));
 		FilmActor.setRole(role);

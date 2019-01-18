@@ -92,7 +92,7 @@ public class RepositoryActor {
 		return listOwners;
 	}
 
-	public Actor searchAndDeleteActor(Integer codActor) {
+	public Actor DeleteActorById(Integer codActor) {
 		Actor ownerInDatabase = null;
 		PreparedStatement prepareStatement = null;
 		Connection conn = manager.open(jdbcUrl);
@@ -111,7 +111,7 @@ public class RepositoryActor {
 	}
 	
 
-	public List<Actor> filterAllActor(int beginDate, int endDate) {
+	public List<Actor> filterByYearOfDateBetween(int beginDate, int endDate) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		List<Actor> list = new ArrayList<Actor>();
@@ -168,7 +168,7 @@ public class RepositoryActor {
 		return list;
 	}
 
-	public Actor filterAllDirector(String name) {
+	public Actor filterAllActor(String name) {
 		Connection conn = manager.open(jdbcUrl);
 		PreparedStatement preparedStatement = null;
 		Actor actor = null;
@@ -188,33 +188,33 @@ public class RepositoryActor {
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				FilmActors peliculaActorfromDataBase = new FilmActors();
-				peliculaActorfromDataBase.setCodPelicula(resultSet.getInt(4));
-				actor.getPeliculaActor().add(peliculaActorfromDataBase);
+				peliculaActorfromDataBase.setCodFilm(resultSet.getInt(4));
+				actor.getFilmActor().add(peliculaActorfromDataBase);
 			}
 
 			int index = 0;
-			for (FilmActors peliculaActor : actor.getPeliculaActor()) {
+			for (FilmActors peliculaActor : actor.getFilmActor()) {
 
 				preparedStatement = conn
-						.prepareStatement("SELECT * FROM FILM where cod=" + peliculaActor.getCodPelicula());
+						.prepareStatement("SELECT * FROM FILM where cod=" + peliculaActor.getCodFilm());
 				resultSet = preparedStatement.executeQuery();
 				while (resultSet.next()) {
 					Film peliculafromDataBase = new Film();
-					peliculafromDataBase.setTITTLE(resultSet.getString(2));
-					peliculafromDataBase.setCODOWNER(resultSet.getInt(3));
-					actor.getPeliculaActor().get(index).setFilm(peliculafromDataBase);
+					peliculafromDataBase.setTittle(resultSet.getString(2));
+					peliculafromDataBase.setCodDirector(resultSet.getInt(3));
+					actor.getFilmActor().get(index).setFilm(peliculafromDataBase);
 				}
 				index++;
 			}
 			index = 0;
-			for (FilmActors peliculaActor : actor.getPeliculaActor()) {
+			for (FilmActors peliculaActor : actor.getFilmActor()) {
 				preparedStatement = conn.prepareStatement(
-						"SELECT * FROM DIRECTOR where COD=" + peliculaActor.getFilm().getCODOWNER());
+						"SELECT * FROM DIRECTOR where COD=" + peliculaActor.getFilm().getCodDirector());
 				resultSet = preparedStatement.executeQuery();
 				while (resultSet.next()) {
 					Director directorfromDataBase = new Director();
 					directorfromDataBase.setName(resultSet.getString(2));
-					actor.getPeliculaActor().get(index).getFilm().setDirector(directorfromDataBase);
+					actor.getFilmActor().get(index).getFilm().setDirector(directorfromDataBase);
 				}
 				index++;
 			}

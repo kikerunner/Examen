@@ -5,7 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 public class ConnectionH2 implements ConnectionManager {
+	
+	Logger logger = LogManager.getLogger();
 
 	public Connection open(String jdbcUrl) {
 		Connection conn = null;
@@ -13,7 +18,7 @@ public class ConnectionH2 implements ConnectionManager {
 			Class.forName("org.h2.Driver");
 			conn = DriverManager.getConnection(jdbcUrl, "sa", "");
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error(e);
 			throw new RuntimeException(e);
 		}
 		return conn;
@@ -25,8 +30,7 @@ public class ConnectionH2 implements ConnectionManager {
 			prepareStatement = conn.prepareStatement(sql);
 		prepareStatement.execute(sql);
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error(e);
 		}
 		return conn;
 	}
@@ -35,7 +39,7 @@ public class ConnectionH2 implements ConnectionManager {
 		try {
 			conn.close();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			logger.error(e);
 			throw new RuntimeException(e);
 		}
 

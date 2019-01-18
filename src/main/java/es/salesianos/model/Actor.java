@@ -7,7 +7,7 @@ public class Actor {
 	private Integer cod;
 	private String name;
 	private Integer yearofbirthday;
-	private List<FilmActors> peliculaActor = new ArrayList<FilmActors>();
+	private List<FilmActors> filmActor = new ArrayList<FilmActors>();
 	public Integer getCod() {
 		return cod;
 	}
@@ -27,12 +27,12 @@ public class Actor {
 		this.yearofbirthday = yearofbirthday;
 	}
 	
-	public List<FilmActors> getPeliculaActor() {
-		return peliculaActor;
+	public List<FilmActors> getFilmActor() {
+		return filmActor;
 	}
 
-	public void setPeliculaActor(List<FilmActors> peliculaActor) {
-		this.peliculaActor = peliculaActor;
+	public void setFilmActor(List<FilmActors> peliculaActor) {
+		this.filmActor = peliculaActor;
 	}
 
 }

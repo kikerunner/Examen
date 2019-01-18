@@ -23,9 +23,9 @@ public class RecoveryAddFilmServlet extends HttpServlet {private static final lo
 
 @Override
 protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	Film film = ExamAssembler.assembleFilmFrom(req);
-	service.addFilm(film);
-	doAction(req, resp);
+		Film film = ExamAssembler.assembleFilmFrom(req);
+		service.addFilm(film);
+		doAction(req, resp);
 }
 
 @Override	
@@ -33,16 +33,16 @@ protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws Se
 		String codFilm = req.getParameter("cod");
 
 		req.setAttribute("codPelicula", codFilm);
-	doAction(req, resp);
+		doAction(req, resp);
 }
 
 private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		List<Actor> listAllActors = service2.selectAllActor();
 		req.setAttribute("listAllActores", listAllActors);
-	redirect(req, resp);
+		redirect(req, resp);
 }
 
 protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/selectActor.jsp");
-	dispatcher.forward(req, resp);
+		dispatcher.forward(req, resp);
 }}
