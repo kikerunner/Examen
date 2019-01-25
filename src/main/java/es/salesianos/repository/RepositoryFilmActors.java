@@ -92,7 +92,7 @@ public class RepositoryFilmActors {
 			while (resultSet.next()) {
 				Film peliculafromDataBase = new Film();
 				peliculafromDataBase.setCod(resultSet.getInt(1));
-				peliculafromDataBase.setTittle(resultSet.getString(2));
+				peliculafromDataBase.setTitle(resultSet.getString(2));
 				peliculafromDataBase.setCodDirector(resultSet.getInt(3));
 				filmActor.setFilm(peliculafromDataBase);
 			}

@@ -20,9 +20,9 @@ public class ExamAssembler {
 	
 	public static Film assembleFilmFrom(HttpServletRequest req) {
 		Film film = new Film();
-		String titulo=req.getParameter("TITTLE");
+		String titulo=req.getParameter("title");
 		Integer codowner=Integer.parseInt(req.getParameter("CODOWNER"));
-		film.setTittle(titulo);
+		film.setTitle(titulo);
 		film.setCodDirector(codowner);
 		return film;
 	}

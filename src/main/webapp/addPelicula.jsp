@@ -40,8 +40,8 @@
 		<tbody>
 			<c:forEach var="pelicula1" items="${listAllFilms}">
 				<tr>
-					<td><c:out value="${pelicula1.TITTLE}" /></td>
-					<td><c:out value="${pelicula1.CODOWNER}" /></td>
+					<td><c:out value="${pelicula1.title}" /></td>
+					<td><c:out value="${pelicula1.codDirector}" /></td>
 					<td><a href="/deletePelicula?codPelicula=${pelicula1.COD}">DELETE</a>
 					</td>
 				</tr>

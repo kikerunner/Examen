@@ -14,13 +14,7 @@ public class Film {
 	public void setCod(Integer cod) {
 		this.cod = cod;
 	}
-	public String getTittle() {
-		return title;
-	}
-
-	public void setTittle(String Title) {
-		title = Title;
-	}
+	
 	public Integer getCodDirector() {
 		return codDirector;
 	}
@@ -43,6 +37,12 @@ public class Film {
 
 	public void setFilmActor(List<FilmActors> peliculaActor) {
 		this.peliculaActor = peliculaActor;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	
 }
