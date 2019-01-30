@@ -16,14 +16,6 @@
 <form action="LoadActorsList" method="post">
 		<input type="submit" value="Show List">
 </form>
-
-	<%
-		List<Actor> actors = (List<Actor>) request.getAttribute("listAllActors");
-		pageContext.setAttribute("actors", actors);
-
-		
-	%>
-
 	<form action="AddActor" method="post">
 		<span>Name:</span><input type="text" name="NAME">
 		<span>Year Of Birthdate</span><input type="number" name="YEAROFBIRTHDAY">
@@ -45,7 +37,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor1" items="${listAllActors}">
+			<c:forEach var="actor1" items="${LoadActorsList}">
 				<tr>
 					<td><c:out value="${actor1.name}" /></td>
 					<td><c:out value="${actor1.yearofbirthday}" /></td>
