@@ -21,10 +21,4 @@ public class DeleteActorServlet{
 		service.searchAndDeleteActor(codActor);
 		return "addActor";
 	}
-	
-	@PostMapping("deleteActor")
-	protected String deleteActor(@RequestParam int codActor){
-		service.searchAndDeleteActor(codActor);
-		return "addActor";
-	}
 }
