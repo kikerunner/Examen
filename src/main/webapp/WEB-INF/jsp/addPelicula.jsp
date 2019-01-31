@@ -18,8 +18,8 @@
 </form>
 
 	<form action="AddPelicula" method="post">
-		<span>Title:</span><input type="text" name="TITTLE">
-		<span>Director's Code:</span><input type="number" name="CODOWNER">
+		<span>Title:</span><input type="text" name="title">
+		<span>Director's Code:</span><input type="number" name="codDirector">
 		<input type="submit" value="Send">
 	</form>
 	<table border="1">
