@@ -21,11 +21,11 @@
 		<span>Year Of Birthdate</span><input type="number" name="yearofbirthday">
 		<input type="submit">
 	</form>
-	<form action="AddActor" method="post">
+	<form action="FilterActor" method="post">
 		<span>From:</span>
-		<input type="text" name="beginDate">
+		<input type="number" name="beginDate">
 		<span>To:</span>
-		<input type="text" name="endDate">
+		<input type="number" name="endDate">
 		<input type="submit">
 	</form>
 	<table border="1">
