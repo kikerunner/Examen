@@ -1,14 +1,7 @@
 package es.salesianos.controller;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -28,7 +21,6 @@ public class ActorServlet {
 	@Qualifier("elServicio")
 	private Service service;
 	
-
 	@Autowired
 	@Qualifier("actorService")
 	private ActorService actorService;
@@ -56,13 +48,12 @@ public class ActorServlet {
 		return model;
 	}
 	
-	
 	@PostMapping("FilterActor")
 	public ModelAndView filteringActor(@RequestParam Integer beginDate, Integer endDate) {
 		List<Actor> listAllActors = new ArrayList<>();
-			listAllActors = actorService.filterAllActor(beginDate, endDate);
-			ModelAndView model = new ModelAndView("addActor");
-			model.addObject("LoadActorsList", listAllActors);
-			return model;
+		listAllActors = actorService.filterAllActor(beginDate, endDate);
+		ModelAndView model = new ModelAndView("addActor");
+		model.addObject("LoadActorsList", listAllActors);
+		return model;
 	}
 }

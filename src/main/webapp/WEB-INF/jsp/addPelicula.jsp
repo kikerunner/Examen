@@ -17,13 +17,6 @@
 		<input type="submit" value="Show List">
 </form>
 
-	<%
-		List<Film> peliculas = (List<Film>) request.getAttribute("listAllFilms");
-		pageContext.setAttribute("peliculas", peliculas);
-
-		
-	%>
-
 	<form action="AddPelicula" method="post">
 		<span>Title:</span><input type="text" name="TITTLE">
 		<span>Director's Code:</span><input type="number" name="CODOWNER">
