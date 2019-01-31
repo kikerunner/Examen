@@ -26,10 +26,10 @@ public class PeliculaServlet extends HttpServlet {
 		String codDirectorString = req.getParameter("codDirector");
 		Film film = new Film();
 		int cod = Integer.parseInt(codString);
-		film.setCod(cod);
+		film.setcod(cod);
 		int codDirector = Integer.parseInt(codDirectorString);
 		film.setCodDirector(codDirector);
-		film.setTitle(title);
+		film.settitle(title);
 		service.insert(film);
 		doAction(req, resp);
 	}
@@ -41,7 +41,7 @@ public class PeliculaServlet extends HttpServlet {
 		if(null != codString) {
 			Film film = new Film();
 			int cod = Integer.parseInt(codString);
-			film.setCod(cod);
+			film.setcod(cod);
 			service.delete(film);
 		}
 		doAction(req, resp);
