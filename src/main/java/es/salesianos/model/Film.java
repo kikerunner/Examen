@@ -8,10 +8,11 @@ public class Film {
 	private Integer codDirector;
 	private Director director;
 	private List<FilmActors> peliculaActor;
-	public Integer getCOD() {
+	
+	public Integer getcod() {
 		return cod;
 	}
-	public void setCod(Integer cod) {
+	public void setcod(Integer cod) {
 		this.cod = cod;
 	}
 	
@@ -38,10 +39,10 @@ public class Film {
 	public void setFilmActor(List<FilmActors> peliculaActor) {
 		this.peliculaActor = peliculaActor;
 	}
-	public String getTitle() {
+	public String gettitle() {
 		return title;
 	}
-	public void setTitle(String title) {
+	public void settitle(String title) {
 		this.title = title;
 	}
 	

@@ -91,8 +91,8 @@ public class RepositoryFilmActors {
 			resultSet = preparedStatement.executeQuery();
 			while (resultSet.next()) {
 				Film peliculafromDataBase = new Film();
-				peliculafromDataBase.setCod(resultSet.getInt(1));
-				peliculafromDataBase.setTitle(resultSet.getString(2));
+				peliculafromDataBase.setcod(resultSet.getInt(1));
+				peliculafromDataBase.settitle(resultSet.getString(2));
 				peliculafromDataBase.setCodDirector(resultSet.getInt(3));
 				filmActor.setFilm(peliculafromDataBase);
 			}

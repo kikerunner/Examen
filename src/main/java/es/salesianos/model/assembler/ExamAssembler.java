@@ -22,7 +22,7 @@ public class ExamAssembler {
 		Film film = new Film();
 		String titulo=req.getParameter("title");
 		Integer codowner=Integer.parseInt(req.getParameter("CODOWNER"));
-		film.setTitle(titulo);
+		film.settitle(titulo);
 		film.setCodDirector(codowner);
 		return film;
 	}

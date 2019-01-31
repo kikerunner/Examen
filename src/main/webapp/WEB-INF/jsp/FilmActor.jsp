@@ -10,12 +10,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-List<Film> listAllFilms = (List<Film>)request.getAttribute("listAllFilms");
-%>
-
-
-
 <table border="1">
 	<thead>
 		<tr>
@@ -27,9 +21,9 @@ List<Film> listAllFilms = (List<Film>)request.getAttribute("listAllFilms");
 	<tbody>
 		<c:forEach var="film" items="${listAllFilms}">
 			<tr>
-				<td><c:out value="${film.COD}"/> </td>
-				<td><c:out value="${film.TITTLE}"/> </td>
-				<td><a href="/recoveryFilm?cod=${film.COD}">Asociate</a></td>
+				<td><c:out value="${film.cod}"/> </td>
+				<td><c:out value="${film.title}"/> </td>
+				<td><a href="/recoveryFilm?cod=${film.cod}">Asociate</a></td>
 	    	</tr>
 		</c:forEach>
 	</tbody>
