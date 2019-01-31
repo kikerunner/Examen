@@ -26,33 +26,23 @@ public class ActorServlet {
 	private Service service;
 
 	@GetMapping("addActor")
-	public String getListOwnerPage() {
+	public String getListActorPage() {
 		return "addActor";
 	}
 	
 	@PostMapping("LoadActorsList")
-	public ModelAndView addOwner() {
+	public ModelAndView getListActors() {
 		List<Actor> actores = service.selectAllActor();
 		ModelAndView model = new ModelAndView("addActor");
 		model.addObject("LoadActorsList", actores);
 		return model;
 	}
-	/*@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doAction(req, resp);
+	
+	@PostMapping("AddActor")
+	public ModelAndView createNewActor() {
+		List<Actor> actores = service.selectAllActor();
+		ModelAndView model = new ModelAndView("addActor");
+		model.addObject("LoadActorsList", actores);
+		return model;
 	}
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doAction(req, resp);
-	}
-
-	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		redirect(req, resp);
-	}
-
-	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/actor.jsp");
-		dispatcher.forward(req, resp);
-	}*/
 }

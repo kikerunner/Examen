@@ -17,8 +17,8 @@
 		<input type="submit" value="Show List">
 </form>
 	<form action="AddActor" method="post">
-		<span>Name:</span><input type="text" name="NAME">
-		<span>Year Of Birthdate</span><input type="number" name="YEAROFBIRTHDAY">
+		<span>Name:</span><input type="text" name="name">
+		<span>Year Of Birthdate</span><input type="number" name="yearofbirthday">
 		<input type="submit">
 	</form>
 	<form action="AddActor" method="post">

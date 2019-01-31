@@ -5,7 +5,7 @@ import java.util.List;
 import es.salesianos.model.Actor;
 import es.salesianos.repository.RepositoryActor;
 
-@org.springframework.stereotype.Service("actorServicio")
+@org.springframework.stereotype.Service("actorService")
 public class ActorService {
 	private RepositoryActor repositoryActor = new RepositoryActor();
 
