@@ -49,7 +49,7 @@ public class Service {
 
 	}
 	public void delete(Film film) {
-		repositoryFilm.searchAndDeletePelicula(film.getCOD());
+		repositoryFilm.searchAndDeletePelicula(film.getcod());
 		
 	}
 	public void delete(Director director) {

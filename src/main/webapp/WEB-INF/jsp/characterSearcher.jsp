@@ -12,11 +12,6 @@
 <title>Index page</title>
 </head>
 <body>
-
-	<%
-		FilmActors selectPeliculaActor = (FilmActors)request.getAttribute("selectPeliculaActor");
-	%>
-
 	<form action="/characterSearcher" method="post">
 	<span>Searching by Character: <input type="text" name="role"></span>
 	<br />

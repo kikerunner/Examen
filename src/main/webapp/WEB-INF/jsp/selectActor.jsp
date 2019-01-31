@@ -12,12 +12,6 @@
 <title>Index page</title>
 </head>
 <body>
-
-	<%
-		List<Actor> listAllActores = (List<Actor>)request.getAttribute("listAllActores");
-		 request.getAttribute("codPelicula");
-	%>
-
 	<table border="1">
 		<thead>
 			<tr>
@@ -33,7 +27,7 @@
 					<td><c:out value="${actor.cod}" /></td>
 					<td><c:out value="${actor.name}" /></td>
 					<td><c:out value="${actor.yearofbirthday}" /></td>
-					<td><a href="/fillPeliculaActor?codActor=${actor.cod}&codPelicula=${codPelicula}">Seleccionar Actor</a></td>
+					<td><a href="/selectPeliculaActor?codActor=${actor.cod}&codFilm=${codFilm}">Seleccionar Actor</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

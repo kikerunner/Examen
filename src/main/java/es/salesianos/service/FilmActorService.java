@@ -5,6 +5,7 @@ package es.salesianos.service;
 import es.salesianos.model.FilmActors;
 import es.salesianos.repository.RepositoryFilmActors;
 
+@org.springframework.stereotype.Service("filmActorService") 
 public class FilmActorService {
 
 	private RepositoryFilmActors repositoryFilmActors = new RepositoryFilmActors();
