@@ -14,7 +14,7 @@ public class DeletePeliculaServlet {
 	@Qualifier("filmService")
 	private FilmService filmService;
 	
-	@GetMapping("deletePeliucla")
+	@GetMapping("deletePelicula")
 	protected String searchingAndDeletingActor(@RequestParam int codPelicula){
 		filmService.searchAndDeleteFilm(codPelicula);
 		return "addPelicula";
