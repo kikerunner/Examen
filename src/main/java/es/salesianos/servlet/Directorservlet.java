@@ -1,56 +1,40 @@
 package es.salesianos.servlet;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.IOException;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import es.salesianos.model.Actor;
-import es.salesianos.model.Director;
-import es.salesianos.service.DirectorService;
+import es.salesianos.service.Service;
 import es.salesianos.service.Service;
 
-@Controller
-public class Directorservlet {
+public class Directorservlet extends HttpServlet {
 
-	@Autowired
-	@Qualifier("elServicio")
-	private Service service;
-	
-	@Autowired
-	@Qualifier("directorService")
-	private DirectorService directorService;
 
-	@GetMapping("addDirector")
-	public String getListActorPage() {
-		return "addDirector";
+	private static final long serialVersionUID = 1L;
+
+	private Service service = new Service();
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doAction(req, resp);
 	}
-	
-	@PostMapping("LoadDirectorsList")
-	public ModelAndView getListDirectors() {
-		List<Director> directors = service.selectAllDirector();
-		ModelAndView model = new ModelAndView("addDirector");
-		model.addObject("listAllDirectors", directors);
-		return model;
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		doAction(req, resp);
 	}
-	@PostMapping("AddDirector")
-	public ModelAndView addingDirector(Director director) {
-		List<Director> listAllDirectors = new ArrayList<>();
-		service.insert(director);
-		listAllDirectors = service.selectAllDirector();
-		ModelAndView model = new ModelAndView("addDirector");
-		model.addObject("listAllDirectors", listAllDirectors);
-		return model;
+
+	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		redirect(req, resp);
 	}
-	@GetMapping("deleteDirector")
-	protected String searchingAndDeletingDirector(@RequestParam int codDirector){
-		directorService.searchAndDeleteDirector(codDirector);;
-		return "addDirector";
+
+	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/director.jsp");
+		dispatcher.forward(req, resp);
 	}
 }

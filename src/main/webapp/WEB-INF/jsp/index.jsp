@@ -20,13 +20,13 @@
 		<a href="addDirector">Directors</a>
 	</div>
 	<div>
-		<a href="/FilmActor">Asociating films with Actors:</a>
+		<a href="FilmActor">Asociating films with Actors:</a>
 	</div>
 	<div>
 		<a href="characterSearcher">Looking for Characters</a><br/>
 	</div>
 	<div>
-		<a href="/ActorSearcher">Searcher of Director by ActorHolaa</a><br/>
+		<a href="ActorSearcher">Searcher of Director by ActorHolaa</a><br/>
 	</div>
 
 	
