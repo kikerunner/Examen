@@ -16,16 +16,8 @@
 <form action="LoadDirectorsList" method="post">
 		<input type="submit" value="Show List">
 </form>
-
-	<%
-		List<Director> directors = (List<Director>) request.getAttribute("listAllDirectors");
-		pageContext.setAttribute("directors", directors);
-
-		
-	%>
-
 	<form action="AddDirector" method="post">
-		<span>Director's Name</span><input type="text" name="NAME">
+		<span>Director's Name</span><input type="text" name="name">
 		<input type="submit" value="Send">
 	</form>
 	<table border="1">

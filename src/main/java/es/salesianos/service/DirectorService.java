@@ -6,6 +6,7 @@ import es.salesianos.model.Director;
 import es.salesianos.repository.RepositoryDirector;
 
 
+@org.springframework.stereotype.Service("directorService")
 public class DirectorService {
 	private RepositoryDirector repositoryDirector = new RepositoryDirector();
 
