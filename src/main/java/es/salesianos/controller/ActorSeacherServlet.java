@@ -27,7 +27,6 @@ public class ActorSeacherServlet {
 	
 	@PostMapping("ActorSearcher")
 	public ModelAndView getListActors(@RequestParam String role) {
-		System.out.println(role);
 		FilmActors selectFilmActor = filmactorService.filterAllPeliculaActor(role);
 		ModelAndView model = new ModelAndView("ActorSearcher");
 		model.addObject("listFilterActor", selectFilmActor);
