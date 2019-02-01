@@ -20,16 +20,20 @@ public class ActorSeacherServlet {
 	@Qualifier("filmActorService")
 	private FilmActorService filmactorService;
 	
+	@Autowired
+	@Qualifier("actorService")
+	private ActorService actorService;
+	
 	@GetMapping("ActorSearcher")
 	public String getActorSearcherPage() {
 		return "ActorSearcher";
 	}
 	
 	@PostMapping("ActorSearcher")
-	public ModelAndView getListActors(@RequestParam String role) {
-		FilmActors selectFilmActor = filmactorService.filterAllPeliculaActor(role);
+	public ModelAndView getListActors(@RequestParam String name) {
+		Actor listFilterActor = actorService.filterAllDirector(name);
 		ModelAndView model = new ModelAndView("ActorSearcher");
-		model.addObject("listFilterActor", selectFilmActor);
+		model.addObject("listFilterActor", listFilterActor);
 		return model;
 	}
 }

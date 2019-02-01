@@ -13,7 +13,7 @@
 </head>
 <body>
 	<form action="ActorSearcher" method="post">
-		<span>Looking By Actor: <input type="text" name="role"></span>
+		<span>Looking By Actor: <input type="text" name="name"></span>
 		<br /> <input type="submit" value="Send">
 	</form>
 	<br />
@@ -28,7 +28,7 @@
 		</thead>
 		<tbody>
 			<tr>
-					<c:forEach var="peliculaActor" items="${listFilterActor.peliculaActor}">
+					<c:forEach var="peliculaActor" items="${listFilterActor.filmActor}">
 					<tr>
 					<td>
 						<c:out value="${peliculaActor.film.director.name}" />
