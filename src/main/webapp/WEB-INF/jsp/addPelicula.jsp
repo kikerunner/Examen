@@ -35,7 +35,7 @@
 				<tr>
 					<td><c:out value="${pelicula1.title}" /></td>
 					<td><c:out value="${pelicula1.codDirector}" /></td>
-					<td><a href="/deletePelicula?codPelicula=${pelicula1.COD}">DELETE</a>
+					<td><a href="/deletePelicula?codPelicula=${pelicula1.cod}">DELETE</a>
 					</td>
 				</tr>
 			</c:forEach>

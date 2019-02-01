@@ -75,7 +75,6 @@ public class RepositoryFilmActors {
 				peliculaActorfromDataBase.setCodActor(resultSet.getInt(3));
 				peliculaActorfromDataBase.setCodFilm(resultSet.getInt(4));
 				filmActor = peliculaActorfromDataBase;
-				preparedStatement.close();
 			}
 			preparedStatement = conn.prepareStatement("SELECT * FROM Actor where cod=" + filmActor.getCodActor());
 			resultSet = preparedStatement.executeQuery();
@@ -84,7 +83,6 @@ public class RepositoryFilmActors {
 				actorfromDataBase.setName(resultSet.getString(2));
 				actorfromDataBase.setYearofbirthday(resultSet.getInt(3));
 				filmActor.setActor(actorfromDataBase);
-				preparedStatement.close();
 			}
 
 			preparedStatement = conn.prepareStatement("SELECT * FROM FILM where cod=" + filmActor.getCodFilm());

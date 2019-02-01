@@ -12,13 +12,8 @@
 <title>Index page</title>
 </head>
 <body>
-
-	<%
-		Actor listFilterActor = (Actor)request.getAttribute("listFilterActor");
-	%>
-
-	<form action="/ActorSearcher" method="post">
-		<span>Looking By Actor: <input type="text" name="name"></span>
+	<form action="ActorSearcher" method="post">
+		<span>Looking By Actor: <input type="text" name="role"></span>
 		<br /> <input type="submit" value="Send">
 	</form>
 	<br />
@@ -39,7 +34,7 @@
 						<c:out value="${peliculaActor.film.director.name}" />
 						</td>
 					<td>
-						<c:out value="${peliculaActor.film.TITTLE}" />
+						<c:out value="${peliculaActor.film.title}" />
 					</td>
 					</tr>
 					</c:forEach>
