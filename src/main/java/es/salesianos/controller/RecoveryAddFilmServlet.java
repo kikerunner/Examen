@@ -1,14 +1,6 @@
 package es.salesianos.controller;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -23,6 +15,7 @@ import es.salesianos.model.Film;
 import es.salesianos.model.FilmActors;
 import es.salesianos.model.assembler.ExamAssembler;
 import es.salesianos.service.ActorService;
+import es.salesianos.service.ActorServiceInterface;
 import es.salesianos.service.FilmService;
 import es.salesianos.service.FilmActorService;
 @Controller
@@ -33,7 +26,7 @@ public class RecoveryAddFilmServlet {
 
 	@Autowired
 	@Qualifier("actorService")
-	private ActorService actorService;
+	private ActorServiceInterface actorService;
 	
 	@Autowired
 	@Qualifier("filmActorService")

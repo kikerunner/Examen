@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import es.salesianos.model.Actor;
 import es.salesianos.service.ActorService;
+import es.salesianos.service.ActorServiceInterface;
 import es.salesianos.service.Service;
 
 @Controller
@@ -23,7 +24,7 @@ public class ActorServlet {
 	
 	@Autowired
 	@Qualifier("actorService")
-	private ActorService actorService;
+	private ActorServiceInterface actorService;
 
 	@GetMapping("addActor")
 	public String getListActorPage() {

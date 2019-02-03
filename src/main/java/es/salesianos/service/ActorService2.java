@@ -8,8 +8,8 @@ import es.salesianos.model.Actor;
 import es.salesianos.repository.RepositoryActor;
 
 @org.springframework.stereotype.Service("actorService")
-@Profile("PRO")
-public class ActorService implements ActorServiceInterface {
+@Profile("Prueba")
+public class ActorService2 implements ActorServiceInterface {
 	private RepositoryActor repositoryActor = new RepositoryActor();
 
 	public RepositoryActor getRepository() {
@@ -29,7 +29,7 @@ public class ActorService implements ActorServiceInterface {
 	}
 
 	public void addActor(Actor actor) {
-		repositoryActor.insertActor(actor);
+		System.out.println("Salvando:" + actor.getName());
 	}
 
 	public List<Actor> filterAllActor(int beginDate, int endDate) {

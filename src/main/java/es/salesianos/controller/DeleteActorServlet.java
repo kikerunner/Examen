@@ -8,12 +8,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import es.salesianos.service.ActorService;
+import es.salesianos.service.ActorServiceInterface;
 
 @Controller
 public class DeleteActorServlet{
 	@Autowired
 	@Qualifier("actorService")
-	private ActorService service;
+	private ActorServiceInterface service;
 	
 	@GetMapping("deleteActor")
 	protected String searchingAndDeletingActor(@RequestParam int codActor){

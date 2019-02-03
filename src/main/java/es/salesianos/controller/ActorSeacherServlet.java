@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import es.salesianos.model.Actor;
 import es.salesianos.model.FilmActors;
 import es.salesianos.service.ActorService;
+import es.salesianos.service.ActorServiceInterface;
 import es.salesianos.service.FilmActorService;
 @Controller
 public class ActorSeacherServlet {
@@ -22,7 +23,7 @@ public class ActorSeacherServlet {
 	
 	@Autowired
 	@Qualifier("actorService")
-	private ActorService actorService;
+	private ActorServiceInterface actorService;
 	
 	@GetMapping("ActorSearcher")
 	public String getActorSearcherPage() {
