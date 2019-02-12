@@ -26,16 +26,16 @@
 		<thead>
 			<tr>
 				<td>Title</td>
-				<td>CodOwner</td>
+				<td>CodDirector</td>
 				<td>Erase</td>
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="pelicula1" items="${listAllFilms}">
+			<c:forEach var="film" items="${listAllFilms}">
 				<tr>
-					<td><c:out value="${pelicula1.title}" /></td>
-					<td><c:out value="${pelicula1.codDirector}" /></td>
-					<td><a href="/deletePelicula?codPelicula=${pelicula1.cod}">DELETE</a>
+					<td><c:out value="${film.title}" /></td>
+					<td><c:out value="${film.codDirector}" /></td>
+					<td><a href="/deletePelicula?codPelicula=${film.cod}">DELETE</a>
 					</td>
 				</tr>
 			</c:forEach>

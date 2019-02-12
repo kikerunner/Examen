@@ -37,7 +37,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="actor1" items="${LoadActorsList}">
+			<c:forEach var="actor1" items="${loadActorsList}">
 				<tr>
 					<td><c:out value="${actor1.name}" /></td>
 					<td><c:out value="${actor1.yearofbirthday}" /></td>

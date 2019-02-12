@@ -35,7 +35,7 @@ public class ActorServlet {
 	public ModelAndView getListActors() {
 		List<Actor> actores = service.selectAllActor();
 		ModelAndView model = new ModelAndView("addActor");
-		model.addObject("LoadActorsList", actores);
+		model.addObject("loadActorsList", actores);
 		return model;
 	}
 	

@@ -28,10 +28,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="director1" items="${listAllDirectors}">
+			<c:forEach var="director" items="${listAllDirectors}">
 				<tr>
-					<td><c:out value="${director1.name}" /></td>
-					<td><a href="/deleteDirector?codDirector=${director1.cod}">DELETE</a>
+					<td><c:out value="${director.name}" /></td>
+					<td><a href="/deleteDirector?codDirector=${director.cod}">DELETE</a>
 					</td>
 				</tr>
 			</c:forEach>

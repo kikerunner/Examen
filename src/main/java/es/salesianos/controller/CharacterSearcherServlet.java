@@ -25,39 +25,9 @@ public class CharacterSearcherServlet {
 	
 	@PostMapping("characterSearcher")
 	public ModelAndView findingCharacter(String role) {
-		FilmActors selectPeliculaActor = filmactorService.filterAllPeliculaActor(role);
+		FilmActors selectfilmActor = filmactorService.filterAllPeliculaActor(role);
 		ModelAndView model = new ModelAndView("characterSearcher");
-		model.addObject("selectPeliculaActor", selectPeliculaActor);
+		model.addObject("selectfilmActor", selectfilmActor);
 		return model;
 	}
-
-	/*@PostMapping("LoadFilmsList")
-	public ModelAndView getListActors(String role) {
-		ModelAndView model = new ModelAndView("addPelicula");
-		model.addObject("listAllFilms", films);
-		return model;
-	}
-	/*@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doAction(req, resp);
-	}
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		doAction(req, resp);
-	}
-
-	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		String role = req.getParameter("role");
-		if (role != null) {
-			FilmActors selectFilmActor = service.filterAllPeliculaActor(role);
-			req.setAttribute("selectPeliculaActor", selectFilmActor);
-		}
-		redirect(req, resp);
-	}
-
-	protected void redirect(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/characterSearcher.jsp");
-		dispatcher.forward(req, resp);
-	}*/
 }
