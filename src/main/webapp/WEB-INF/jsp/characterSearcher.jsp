@@ -30,9 +30,9 @@
 		</thead>
 		<tbody>
 				<tr>
-					<td><c:out value="${selectfilmActor.film.title}" /></td>
-										<td><c:out value="${selectfilmActor.actor.name}" /></td>
-					<td><c:out value="${selectfilmActor.role}" /></td>
+					<td><c:out value="${selectfilmActor.title}" /></td>
+					<td><c:out value="${selectfilmActor.name}" /></td>
+					<td><c:out value="${selectfilmActor.year}" /></td>
 				</tr>
 		</tbody>
 	</table>

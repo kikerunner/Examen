@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.model.FilmActors;
 import es.salesianos.service.ActorService;
 import es.salesianos.service.ActorServiceInterface;
@@ -32,7 +33,7 @@ public class ActorSeacherServlet {
 	
 	@PostMapping("ActorSearcher")
 	public ModelAndView getListActors(@RequestParam String name) {
-		Actor listFilterActor = actorService.filterAllDirector(name);
+		Director listFilterActor = actorService.filterAllDirector(name);
 		ModelAndView model = new ModelAndView("ActorSearcher");
 		model.addObject("listFilterActor", listFilterActor);
 		return model;

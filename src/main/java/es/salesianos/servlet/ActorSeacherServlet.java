@@ -30,8 +30,8 @@ public class ActorSeacherServlet extends HttpServlet {
 	private void doAction(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		String name = req.getParameter("name");
 		if (name != null) {
-			Actor listFilterActor = service.filterAllDirector(name);
-			req.setAttribute("listFilterActor", listFilterActor);
+			//Actor listFilterActor = service.filterAllDirector(name);
+			//req.setAttribute("listFilterActor", listFilterActor);
 		}
 		redirect(req, resp);
 	}

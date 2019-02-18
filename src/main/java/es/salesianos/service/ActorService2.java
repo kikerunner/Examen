@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.context.annotation.Profile;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.repository.RepositoryActor;
 
 @org.springframework.stereotype.Service("actorService")
@@ -40,7 +41,7 @@ public class ActorService2 implements ActorServiceInterface {
 		return repositoryActor.selectAllActor();
 	}
 
-	public Actor filterAllDirector(String name) {
+	public Director filterAllDirector(String name) {
 		return repositoryActor.filterAllActor(name);
 	}
 }

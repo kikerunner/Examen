@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import es.salesianos.model.DtoActorFilm;
 import es.salesianos.model.FilmActors;
 import es.salesianos.service.FilmActorService;
 
@@ -25,7 +26,7 @@ public class CharacterSearcherServlet {
 	
 	@PostMapping("characterSearcher")
 	public ModelAndView findingCharacter(String role) {
-		FilmActors selectfilmActor = filmactorService.filterAllPeliculaActor(role);
+		DtoActorFilm selectfilmActor = filmactorService.filterAllPeliculaActor(role);
 		ModelAndView model = new ModelAndView("characterSearcher");
 		model.addObject("selectfilmActor", selectfilmActor);
 		return model;

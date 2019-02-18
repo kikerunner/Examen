@@ -4,6 +4,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import es.salesianos.model.Actor;
+import es.salesianos.model.Director;
 import es.salesianos.repository.RepositoryActor;
 
 
@@ -24,6 +25,6 @@ public interface ActorServiceInterface {
 
 	List<Actor> selectAllActor();
 
-	Actor filterAllDirector(String name);
+	Director filterAllDirector(String name);
 
 }
